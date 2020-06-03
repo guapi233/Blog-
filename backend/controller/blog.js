@@ -1,4 +1,5 @@
 const { exec } = require("../db/mysql")
+const marked = require("../utils/marked")
 
 /**
  * 获取博客列表
@@ -42,8 +43,11 @@ async function newBlog(blogObj) {
   
   if (!title || !content || !createtime) return false
 
+  // 解析markdown
+  content = marked(content)
+
   let sql = `insert into blog (title, content, createtime) values('${title}', '${content}', ${createtime})`
-  console.log(sql)
+
   let result = await exec(sql)
 
   return result.insertId
