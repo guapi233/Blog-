@@ -11,4 +11,8 @@
   margin: 0;
   padding: 0;
 }
+
+div, nav, main, section {
+  box-sizing: border-box;
+}
 </style>
