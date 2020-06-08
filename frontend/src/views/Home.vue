@@ -44,7 +44,7 @@ nav {
   padding: 0 5.34vh;
 
   .nav-wrap {
-    width: 500px;
+    width: 26.04vw;
     height: 10.67vh;
     line-height: 10.67vh;
     text-align: center;
@@ -54,7 +54,7 @@ nav {
 
     .nav-item {
       margin-right: 1.56vw;
-      font-size: 20px;
+      font-size: 1.04vw;
       color: #fff;
       font-weight: 700;
     }
@@ -88,11 +88,11 @@ nav {
       }
 
       h1 {
-        font-size: 70px;
+        font-size: 3.65vw;
       }
 
       h2 {
-        font-size: 50px;
+        font-size: 2.6vw;
       }
     }
 
@@ -114,6 +114,7 @@ nav {
 
       .left {
         color: @assistColor;
+        font-size: 0.83vw;
       }
     }
   }
