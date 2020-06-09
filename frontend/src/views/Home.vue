@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container">
     <nav>
       <div class="nav-wrap">
-        <div class="nav-item">
+        <div class="nav-item nav-show">
           <span>主</span>
           <span>页</span>
         </div>
@@ -177,7 +177,9 @@ nav {
         line-height: 1.5;
         justify-content: center;
       }
-      .githide {display: none;}
+      .githide {
+        display: none;
+      }
     }
   }
 
@@ -233,6 +235,108 @@ nav {
         font-size: 1.83vw !important;
       }
     }
+  }
+}
+
+// 适配手机
+@media screen and (max-width: 500px) and (min-width: 325px) {
+  .nav-item {
+    display: none;
+  }
+
+  .nav-show {
+    display: block;
+  }
+
+  .shower {
+    width: 85.65vw !important;
+    height: 94vh !important;
+  }
+
+  .shelter-left {
+    z-index: 1;
+
+    .page-tips {
+      bottom: 25.61vh !important;
+      left: 49.06vw !important;
+
+      h1 {
+        font-size: 5.65vw !important;
+      }
+
+      h2 {
+        font-size: 4.6vw !important;
+      }
+    }
+
+    .hr-line {
+      width: 49.08vw !important;
+      left: auto !important;
+      right: -3vw;
+      bottom: 7.25vh !important;
+      transform: rotate(145deg);
+    }
+
+    footer {
+      width: 27.08vw !important;
+      left: 73.56vw !important;
+      min-height: 3.54vh !important;
+    }
+  }
+
+  .shelter-right {
+    flex: 0 !important;
+  }
+}
+
+// 适配iphone5/SE特小机型
+@media screen and (max-width: 325px) {
+  .nav-item {
+    display: none;
+  }
+
+  .nav-show {
+    display: block;
+  }
+
+  .shower {
+    width: 85.65vw !important;
+    height: 94vh !important;
+  }
+
+  .shelter-left {
+    z-index: 1;
+
+    .page-tips {
+      bottom: 25.61vh !important;
+      left: 49.06vw !important;
+
+      h1 {
+        font-size: 5.65vw !important;
+      }
+
+      h2 {
+        font-size: 4.6vw !important;
+      }
+    }
+
+    .hr-line {
+      width: 49.08vw !important;
+      left: auto !important;
+      right: -3vw;
+      bottom: 7.25vh !important;
+      transform: rotate(145deg);
+    }
+
+    footer {
+      width: 17.08vw !important;
+      left: 85.56vw !important;
+      min-height: 3.54vh !important;
+    }
+  }
+
+  .shelter-right {
+    flex: 0 !important;
   }
 }
 </style>
