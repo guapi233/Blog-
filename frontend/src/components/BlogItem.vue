@@ -78,4 +78,28 @@ export default {};
     font-size: 1.83vw !important;
   }
 }
+
+// 适配手机
+@media screen and (max-width: 500px) {
+  .hr-top {
+    width: 6vw !important;
+  }
+
+  .blog-title {
+    font-size: 2.1vw !important;
+  }
+
+  .blog-createtime {
+    font-size: 1.73vw !important;
+  }
+
+  .blog-content {
+    font-size: 1.83vw !important;
+    height: auto !important;
+  }
+
+  .blog-detail {
+    font-size: 1.83vw !important;
+  }
+}
 </style>

@@ -13,7 +13,7 @@
       </div>
 
       <div class="blog-right">
-        <Nav marginTop="3vh" />
+        <Nav marginTop="3vh" :atRight="false" class="blog-nav-toRight" />
       </div>
     </div>
   </div>
@@ -83,6 +83,51 @@ export default {
 
   .blog-slider {
     display: none;
+  }
+}
+
+// 适配手机
+@media screen and (max-width: 500px) {
+  .blog-wrap {
+    display: block !important;
+    position: relative;
+  }
+
+  .blog-list {
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 20vh;
+    padding: 0 10vw 20vh;
+  }
+
+  .blog-left {
+    height: 100%;
+    position: relative;
+    margin: 15vh auto 0;
+  }
+
+  .blog-right {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .blog-slider {
+    display: none;
+  }
+}
+</style>
+
+<style>
+.blog-nav-toRight > div {
+  margin-left: auto;
+}
+
+/* 适配手机 */
+@media screen and (max-width: 500px) {
+  .blog-nav-toRight > div {
+    margin-left: 0 !important;
   }
 }
 </style>

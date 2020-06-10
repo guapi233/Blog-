@@ -1,6 +1,6 @@
 <template>
   <nav :style="{ marginTop }">
-    <div class="nav-wrap">
+    <div class="nav-wrap" :style="isRight">
       <div class="nav-item nav-show">
         <span>主</span>
         <span>页</span>
@@ -35,6 +35,15 @@ export default {
     marginTop: {
       type: String,
       default: "0"
+    },
+    atRight: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    isRight() {
+      return this.atRight ?{marginLeft: "auto"} : {}
     }
   }
 };
@@ -51,7 +60,6 @@ nav {
     line-height: 10.67vh;
     text-align: center;
     background-color: @titleColor;
-    margin-left: auto;
     padding-left: 1.56vw;
     display: flex;
     justify-content: center;
