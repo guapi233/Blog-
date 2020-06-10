@@ -10,9 +10,13 @@
 * {
   margin: 0;
   padding: 0;
+  letter-spacing: 1.5px;
 }
 
-div, nav, main, section {
+div,
+nav,
+main,
+section {
   box-sizing: border-box;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav :style="{ marginTop }">
     <div class="nav-wrap">
       <div class="nav-item nav-show">
         <span>主</span>
@@ -30,13 +30,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    marginTop: {
+      type: String,
+      default: "0"
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
 nav {
   width: 100%;
-  margin-top: 9.61vh;
   padding: 0 5.34vh;
 
   .nav-wrap {

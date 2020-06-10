@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Nav />
+    <Nav marginTop="9.61vh" />
     <div class="shelter">
       <div class="shelter-wrap">
         <div class="shelter-left">
