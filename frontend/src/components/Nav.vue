@@ -35,7 +35,7 @@ export default {};
 
 <style lang="less" scoped>
 nav {
-  width: 100vw;
+  width: 100%;
   margin-top: 9.61vh;
   padding: 0 5.34vh;
 
