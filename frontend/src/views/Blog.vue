@@ -6,11 +6,10 @@
           <BlogItem />
           <BlogItem />
           <BlogItem />
+          <BlogItem />
+          <BlogItem />
         </div>
-        <div
-          class="slider"
-          style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"
-        ></div>
+        <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div>
       </div>
 
       <div class="blog-right">
@@ -22,7 +21,7 @@
 
 <script>
 import Nav from "../components/Nav";
-import BlogItem from "../components/BlogItem"
+import BlogItem from "../components/BlogItem";
 export default {
   components: { Nav, BlogItem }
 };
@@ -32,8 +31,6 @@ export default {
 .blog-list {
   margin-top: 10vh;
   padding: 0 5vw;
-
-
 }
 
 .blog-container {
@@ -42,6 +39,7 @@ export default {
 
 .blog-wrap {
   display: flex;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -58,6 +56,33 @@ export default {
 
 // 适配平板
 @media screen and (max-width: 1200px) and (min-width: 768px) {
+  .blog-wrap {
+    display: block !important;
+    position: relative;
+  }
 
+  .blog-list {
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 20vh;
+    padding: 0 10vw 20vh;
+  }
+
+  .blog-left {
+    height: 100%;
+    position: relative;
+    margin: 15vh auto 0;
+  }
+
+  .blog-right {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .blog-slider {
+    display: none;
+  }
 }
 </style>

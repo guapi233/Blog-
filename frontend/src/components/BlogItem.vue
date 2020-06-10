@@ -51,7 +51,31 @@ export default {};
   .blog-detail {
     color: @adornColor;
     text-decoration: none;
-    font-size: 0.73vw;
+    font-size: 0.83vw;
+  }
+}
+
+// 适配平板
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .hr-top {
+    width: 4vw !important;
+  }
+
+  .blog-title {
+    font-size: 2.1vw !important;
+  }
+
+  .blog-createtime {
+    font-size: 1.73vw !important;
+  }
+
+  .blog-content {
+    font-size: 1.83vw !important;
+    height: auto !important;
+  }
+
+  .blog-detail {
+    font-size: 1.83vw !important;
   }
 }
 </style>
