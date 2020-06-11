@@ -17,5 +17,4 @@ marked.setOptions({
   }
 }) // 基本设置
 
-
 module.exports = marked

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Blog from "../views/Blog.vue"
+import Detail from "../views/Detail.vue"
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
     path: "/blog",
     name: "Blog",
     component: Blog 
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: Detail 
   }
 ]
 

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "codeFont";
+  src: url("font/FiraCode-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Source Sans Pro"), url("/font/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Source Sans Pro Light"), url("/font/SourceSansPro-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Source Sans Pro Semibold"),
+    url("/font/SourceSansPro-Semibold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: local("Roboto Mono"), url("/font/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Dosis";
+  src: local("Dosis Medium"), url("/font/Dosis-Medium.ttf");
+  font-weight: 500;
+}

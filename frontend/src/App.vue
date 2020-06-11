@@ -7,7 +7,7 @@
 <style lang="less">
 @import "./assets/css/base.less";
 
-* {
+*:not(pre, code) {
   margin: 0;
   padding: 0;
   letter-spacing: 1.5px;
