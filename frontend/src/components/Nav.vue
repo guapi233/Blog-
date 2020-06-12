@@ -1,22 +1,22 @@
 <template>
   <nav :style="{ marginTop }">
     <div class="nav-wrap" :style="isRight">
-      <div class="nav-item nav-show">
+      <router-link to="/" class="nav-item nav-show" tag="div">
         <span>主</span>
         <span>页</span>
-      </div>
-      <div class="nav-item">
+      </router-link>
+      <router-link to="/blog" class="nav-item" tag="div">
         <span>博</span>
         <span>客</span>
-      </div>
-      <div class="nav-item">
+      </router-link>
+      <div @click="toGitHub" class="nav-item">
         <span>产</span>
         <span>出</span>
       </div>
-      <div class="nav-item">
+      <router-link to="/about" class="nav-item" tag="div">
         <span>关</span>
         <span>于</span>
-      </div>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -36,6 +36,11 @@ export default {
   computed: {
     isRight() {
       return this.atRight ?{marginLeft: "auto"} : {}
+    }
+  },
+  methods: {
+    toGitHub() {
+      window.open('https://github.com/guapi233')
     }
   }
 };
@@ -61,6 +66,7 @@ nav {
       font-size: 1.04vw;
       color: #fff;
       font-weight: 700;
+      cursor: pointer;
     }
   }
 }
