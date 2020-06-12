@@ -3,7 +3,7 @@
     <div class="detail-wrap">
       <div class="detail-left">
         <div class="back">
-          <img src="../assets/img/back.svg" class="back-to-home" alt />
+          <img @click="backHome" src="../assets/img/back.svg" class="back-to-home" alt />
         </div>
         <div class="content">
           <h1 id="第-5-章-策略模式">第 5 章 策略模式</h1>
@@ -628,7 +628,13 @@ Validator.prototype.start = <span class="hljs-function"><span class="hljs-keywor
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    backHome() {
+      this.$router.push("blog")
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -654,6 +660,7 @@ export default {};
     .back-to-home {
       height: 3vh;
       transform: rotate(180deg);
+      cursor: pointer;
     }
   }
 
