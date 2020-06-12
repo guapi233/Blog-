@@ -10,16 +10,8 @@
         <span>客</span>
       </div>
       <div class="nav-item">
-        <span>归</span>
-        <span>档</span>
-      </div>
-      <div class="nav-item githide">
-        <span>G</span>
-        <span>I</span>
-        <span>T</span>
-        <span>H</span>
-        <span>U</span>
-        <span>B</span>
+        <span>产</span>
+        <span>出</span>
       </div>
       <div class="nav-item">
         <span>关</span>
@@ -60,12 +52,12 @@ nav {
     line-height: 10.67vh;
     text-align: center;
     background-color: @titleColor;
-    padding-left: 1.56vw;
+    padding: 0 1.6vw;
     display: flex;
     justify-content: center;
 
     .nav-item {
-      margin-right: 1.56vw;
+      flex: 1;
       font-size: 1.04vw;
       color: #fff;
       font-weight: 700;
@@ -86,9 +78,6 @@ nav {
         font-size: 2.04vw !important;
         line-height: 1.5;
         justify-content: center;
-      }
-      .githide {
-        display: none;
       }
     }
   }

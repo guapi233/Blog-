@@ -4,7 +4,6 @@
     <div class="shelter">
       <div class="shelter-wrap">
         <div class="shelter-left">
-          <img src="../assets/img/github.svg" alt class="github" />
           <div class="page-tips">
             <h1>你好</h1>
             <h2>欢迎来到我的个人博客</h2>
@@ -50,10 +49,6 @@ export default {
     flex: 6;
     height: 100vh;
     position: relative;
-
-    .github {
-      display: none;
-    }
 
     .page-tips {
       position: absolute;
@@ -126,14 +121,6 @@ export default {
 
   .shelter-left {
     z-index: 1;
-
-    .github {
-      display: block !important;
-      position: absolute;
-      bottom: 31.8vh;
-      right: 35.6vw;
-      width: 3.54vw;
-    }
 
     .page-tips {
       bottom: 25.61vh !important;
