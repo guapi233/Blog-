@@ -689,6 +689,10 @@ export default {
 
 // 手机端适配
 @media screen and (max-width: 500px) {
+  .content {
+    font-size: 14px !important;
+  }
+
   .detail-right {
     flex: 0 !important;
   }
