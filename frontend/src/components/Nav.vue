@@ -2,14 +2,14 @@
   <nav :style="{ marginTop }">
     <div class="nav-wrap" :style="isRight">
       <!-- 主页 -->
-      <router-link to="/" class="nav-item nav-show" tag="div">
+      <router-link to="/" class="nav-item" tag="div">
         <span>主</span>
         <span>页</span>
         <i class="iconfont icon-circle active-item"></i>
       </router-link>
       <!-- 博客页 -->
       <router-link to="/blog" class="nav-item" tag="div">
-        <div class="click-listenner" @click="showSearcher">
+        <div class="click-listener" @click="showSearcher">
           <span>博</span>
           <span>客</span>
           <i class="iconfont icon-search active-item search-item"></i>
@@ -70,13 +70,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.router-link-exact-active i {
-  display: inline !important;
+.router-link-exact-active {
+  display: block !important;
+
+  i {
+    display: inline !important;
+  }
 }
 
 nav {
   width: 100%;
   padding: 0 5.34vh;
+  user-select: none;
 
   .nav-wrap {
     width: 26.04vw;
@@ -119,6 +124,7 @@ nav {
       .click-listener {
         display: inline-block;
         width: 100%;
+        height: 100%;
       }
     }
   }
@@ -137,26 +143,35 @@ nav {
         font-size: 2.04vw !important;
         line-height: 1.5;
         justify-content: center;
+
+        .active-item {
+          margin-top: -1.95vh !important;
+          margin-left: 3.91vw !important;
+        }
+
+        .click-listener {
+          display: flex !important;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        .search-wrap {
+          margin-top: 1.5vh;
+        }
       }
     }
   }
 }
 
 // 适配手机
-@media screen and (max-width: 500px) and (min-width: 325px) {
+@media screen and (max-width: 500px) {
   .nav-item {
     display: none;
-  }
 
-  .nav-show {
-    display: block;
-  }
-}
-
-// 适配iphone5/SE特小机型
-@media screen and (max-width: 325px) {
-  .nav-item {
-    display: none;
+    .search-wrap {
+      top: 0;
+      left: 30vw;
+    }
   }
 
   .nav-show {
