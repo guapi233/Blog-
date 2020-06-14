@@ -70,12 +70,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.router-link-exact-active {
-  display: block !important;
-
-  i {
-    display: inline !important;
-  }
+.router-link-exact-active i {
+  display: inline !important;
 }
 
 nav {
@@ -176,6 +172,10 @@ nav {
 
   .nav-show {
     display: block;
+  }
+
+  .router-link-exact-active {
+    display: block !important;
   }
 }
 </style>
