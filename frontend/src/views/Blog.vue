@@ -6,10 +6,9 @@
           <BlogItem />
           <BlogItem />
           <BlogItem />
-          <BlogItem />
-          <BlogItem />
         </div>
-        <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div>
+        <!-- <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div> -->
+        <Pagination style="margin-left:5vw;" count=100 @turn="turnPage" />
       </div>
 
       <div class="blog-right">
@@ -22,8 +21,14 @@
 <script>
 import Nav from "../components/Nav";
 import BlogItem from "../components/BlogItem";
+import Pagination from "../components/Pagination";
 export default {
-  components: { Nav, BlogItem }
+  components: { Nav, BlogItem, Pagination },
+  methods: {
+    turnPage(pageNo) {
+      console.log(pageNo)
+    }
+  }
 };
 </script>
 
