@@ -28,12 +28,12 @@
 
         <!-- 如果当前选中的页数不大于3，隐藏上三页的按钮 -->
         <i
+          v-if="activePage > 3"
           class="iconfont change-preview decorator"
           :class="[changePreviewOn ?'icon-pagition rotating' :'icon-ellipsis']"
           @mouseenter="changePreviewOn=true"
           @mouseleave="changePreviewOn=false"
           @click="changePreview"
-          v-if="activePage > 3"
         ></i>
         <div
           class="page-number decorator"
@@ -55,12 +55,12 @@
 
         <!-- 如果当前选中的页数不小于最大页标-3，隐藏下三页的按钮 -->
         <i
+          v-if="activePage<pagesCount-3"
           class="iconfont icon-ellipsis change-next decorator"
           :class="[changeNextOn ?'icon-pagition' :'icon-ellipsis']"
           @mouseenter="changeNextOn=true"
           @mouseleave="changeNextOn=false"
           @click="changeNext"
-          v-if="activePage<pagesCount-3"
         ></i>
         <div
           class="page-number decorator"
@@ -127,6 +127,12 @@ export default {
     },
     // 上三页
     changePreview() {
+      // 判断在翻页时，如果当前的页标为4、5、6之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
+      if ([4, 5, 6].includes(this.activePage)) {
+        this.changePreviewOn = false
+      }
+
+      // 翻页逻辑
       if (this.activePage > 3) {
         this.activePage -= 3;
       } else {
@@ -135,6 +141,11 @@ export default {
     },
     // 下三页
     changeNext() {
+      // 判断在翻页时，如果当前的页标为[总页数-6, 总页数-5, 总页数-4]之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
+      if ([this.pagesCount-6, this.pagesCount-5, this.pagesCount-4].includes(this.activePage)) {
+        this.changeNextOn = false
+      }
+
       if (this.activePage < this.pagesCount - 3) {
         this.activePage += 3;
       } else {

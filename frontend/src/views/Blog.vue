@@ -8,7 +8,7 @@
           <BlogItem />
         </div>
         <!-- <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div> -->
-        <Pagination style="margin-left:5vw;" count=100 @turn="turnPage" />
+        <Pagination style="margin-left:5vw;" :count="100" />
       </div>
 
       <div class="blog-right">
