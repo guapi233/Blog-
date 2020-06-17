@@ -1,17 +1,21 @@
-const router = require('koa-router')()
+const router = require("koa-router")();
+const site = require("../config/site.json");
 
-router.get('/', async (ctx, next) => {
-  ctx.body = "index page"
-})
+router.get("/", async (ctx, next) => {
+  ctx.body = "index page";
+});
 
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
+router.post("/upimg", async (ctx, next) => {
+  let result = ctx.request.files.img.path.split("\\");
+  result = result[result.length - 1];
 
-router.get('/json', async (ctx, next) => {
+  ctx.body = `${site.name}/images/${result}`;
+});
+
+router.get("/json", async (ctx, next) => {
   ctx.body = {
-    title: 'koa2 json'
-  }
-})
+    title: "koa2 json",
+  };
+});
 
-module.exports = router
+module.exports = router;
