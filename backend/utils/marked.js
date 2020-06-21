@@ -34,6 +34,9 @@ function handler(text) {
     result[i] = marked(result[i])
   }
 
+  result.otitle = text[0]
+  result.osketch = text[1]
+
   return result
 }
 

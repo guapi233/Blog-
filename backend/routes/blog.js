@@ -36,15 +36,21 @@ router.post("/new", async (ctx, next) => {
   try {
     data = fs.readFileSync(ctx.request.files.blog.path);
   } catch (e) {
+    console.log(e);
     ctx.body = new FailModel("新建失败");
     return;
   }
 
-  let result = await newBlog(data.toString(), ctx.request.body.createtime || Date.now());
+  let result = await newBlog(
+    data.toString(),
+    ctx.request.body.createtime || Date.now()
+  );
+    console.log(result)
   if (!result) {
     ctx.body = new FailModel("新建失败");
     return;
   }
+
   ctx.body = new SuccessModel(result, "新建成功");
 });
 
