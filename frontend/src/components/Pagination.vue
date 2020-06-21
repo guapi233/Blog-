@@ -96,11 +96,14 @@ export default {
     return {
       changePreviewOn: false, // 向前移动三页按钮是否被悬浮
       changeNextOn: false, // 向后移动三页按钮是否被悬浮
-      activePage: 1, // 当前选中的页面
-      pagesCount: this.count // 页面总数
+      activePage: 1 // 当前选中的页面
     };
   },
   computed: {
+    // 页面总数
+    pagesCount() {
+      return this.count;
+    },
     // 当页数过大时，中间的变动页标会根据当前选中的页标而变动
     changerFirst() {
       if (this.activePage <= 3) {
@@ -129,7 +132,7 @@ export default {
     changePreview() {
       // 判断在翻页时，如果当前的页标为4、5、6之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
       if ([4, 5, 6].includes(this.activePage)) {
-        this.changePreviewOn = false
+        this.changePreviewOn = false;
       }
 
       // 翻页逻辑
@@ -142,8 +145,14 @@ export default {
     // 下三页
     changeNext() {
       // 判断在翻页时，如果当前的页标为[总页数-6, 总页数-5, 总页数-4]之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
-      if ([this.pagesCount-6, this.pagesCount-5, this.pagesCount-4].includes(this.activePage)) {
-        this.changeNextOn = false
+      if (
+        [
+          this.pagesCount - 6,
+          this.pagesCount - 5,
+          this.pagesCount - 4
+        ].includes(this.activePage)
+      ) {
+        this.changeNextOn = false;
       }
 
       if (this.activePage < this.pagesCount - 3) {
