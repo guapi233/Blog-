@@ -23,21 +23,21 @@ marked.setOptions({
 // })
 
 function handler(text) {
-  let result = {}
-  text = text.split("-- divide --")
+  let result = {};
+  text = text.split("-- divide --");
 
-  result.title = text[0]
-  result.sketch = text[1]
-  result.content = text[2]
-  
+  result.title = text[0];
+  result.sketch = text[1];
+  result.content = text[2];
+
   for (let i in result) {
-    result[i] = marked(result[i])
+    result[i] = marked(result[i]);
   }
 
-  result.otitle = text[0]
-  result.osketch = text[1]
+  result.otitle = text[0].replace("#", "");
+  result.osketch = text[1];
 
-  return result
+  return result;
 }
 
 module.exports = handler;
