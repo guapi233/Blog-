@@ -6,7 +6,7 @@
           <BlogItem v-for="item in blogList" :key="item.id" :blogItem="item" />
         </div>
         <!-- <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div> -->
-        <Pagination style="margin-left:5vw;" :count="100" />
+        <Pagination style="margin-left:5vw;" :count="totalPage" @turn="changeNow" />
       </div>
 
       <div class="blog-right">
@@ -24,22 +24,33 @@ export default {
   components: { Nav, BlogItem, Pagination },
   data() {
     return {
-      blogList: []
-    }
+      blogList: [],
+      nowPage: 1,
+      totalPage: 0
+    };
   },
   methods: {
-    turnPage(pageNo) {
-      console.log(pageNo);
+    changeNow(nowPage) {
+      this.nowPage = nowPage;
+    },
+    async getList() {
+      let blogList = await this.$axios.get(`/blog/?pagination=${this.nowPage}`);
+      if (blogList.data.isError) {
+        alert(blogList.data.message);
+      } else {
+        this.blogList = blogList.data.data;
+        this.nowPage === 1 &&
+          (this.totalPage = blogList.data.data[0].totalCount / 3);
+      }
     }
   },
   async created() {
-    let blogList = await this.$axios.get("/blog/");
-    if (blogList.data.isError) {
-      alert(blogList.data.message);
-    } else {
-      this.blogList = blogList.data.data;
+    await this.getList();
+  },
+  watch: {
+    nowPage() {
+      this.getList();
     }
-    
   }
 };
 </script>

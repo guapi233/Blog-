@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <div v-html="blog.title"></div>
-          <p>{{ blog.createtime }}</p>
+          <p>{{ blog.createtime | timeFormate }}</p>
           <div v-html="blog.sketch"></div>
           <div v-html="blog.content"></div>
         </div>
@@ -42,7 +42,21 @@ export default {
         }
       }
 
-      console.log(this.blog)
+      console.log(this.blog);
+    }
+  },
+  filters: {
+    timeFormate(time) {
+      let createTime = new Date(Number(time));
+      return `${createTime.getFullYear()}-${
+        createTime.getMonth() + 1 > 9
+          ? createTime.getMonth() + 1
+          : `0${createTime.getMonth() + 1}`
+      }-${
+        createTime.getDate() > 9
+          ? createTime.getDate()
+          : `0${createTime.getDate()}`
+      }`;
     }
   },
   created() {

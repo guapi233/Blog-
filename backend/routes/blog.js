@@ -13,7 +13,10 @@ router.prefix("/blog");
 
 // 获取博客列表
 router.get("/", async (ctx, next) => {
-  let resData = await getList(ctx.request.query.keyword || "");
+  let resData = await getList(
+    ctx.request.query.keyword || "",
+    ctx.request.query.pagination
+  );
 
   ctx.body = new SuccessModel(resData, "成功获取列表");
 });
@@ -45,7 +48,7 @@ router.post("/new", async (ctx, next) => {
     data.toString(),
     ctx.request.body.createtime || Date.now()
   );
-    console.log(result)
+  console.log(result);
   if (!result) {
     ctx.body = new FailModel("新建失败");
     return;

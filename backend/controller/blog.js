@@ -5,15 +5,22 @@ const handler = require("../utils/marked");
  * 获取博客列表
  * @param {*} keyword 关键字
  */
-async function getList(keyword) {
+async function getList(keyword, pagination) {
   let sql = "select * from blog where 1=1 ";
 
   keyword && (sql += `and title like '%${keyword}%' `);
 
   sql += "and state=1 ";
-  sql += "order by createtime desc;";
+  sql += "order by createtime desc ";
+
+  pagination && (sql += `limit ${(pagination - 1) * 3}, 3; `);
 
   let result = await exec(sql);
+
+  if (pagination == 1) {
+    result[0].totalCount = await exec(`select count(id) as count from blog`);
+    result[0].totalCount = result[0].totalCount[0].count;
+  }
 
   return result;
 }
