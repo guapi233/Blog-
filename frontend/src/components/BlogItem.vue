@@ -2,9 +2,9 @@
   <div class="blog-item">
     <div class="hr-top"></div>
     <router-link to="/detail" tag="p" class="blog-title">{{ blogItem.otitle.trim() }}</router-link>
-    <p class="blog-createtime">{{ blogItem.createtime }}</p>
+    <p class="blog-createtime">{{ blogItem.createtime |timeFormate }}</p>
     <p class="blog-content">{{ blogItem.osketch.trim() }}</p>
-    <router-link :to="{name: 'Detail', params: {blog: blogItem}}"  class="blog-detail">阅读全文</router-link>
+    <router-link :to="{name: 'Detail', params: {blog: blogItem}}" class="blog-detail">阅读全文</router-link>
   </div>
 </template>
 
@@ -14,6 +14,20 @@ export default {
     blogItem: {
       type: Object,
       default: {}
+    }
+  },
+  filters: {
+    timeFormate(time) {
+      let createTime = new Date(Number(time));
+      return `${createTime.getFullYear()}-${
+        createTime.getMonth() + 1 > 9
+          ? createTime.getMonth() + 1
+          : `0${createTime.getMonth() + 1}`
+      }-${
+        createTime.getDate() > 9
+          ? createTime.getDate()
+          : `0${createTime.getDate()}`
+      }`;
     }
   }
 };
