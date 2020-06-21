@@ -2,9 +2,14 @@ pre {
   border-radius: 2px;
   position: relative;
 }
+code {
+  background-color: #eceeea;
+  font-weight: bold;
+}
 pre code {
   overflow-x: auto;
   color:rgb(224, 228, 235);
+  background-color: rgb(41, 45, 62);
   white-space: pre;
   padding: 1.2em 1.4em;
   font-size: 0.85rem;
@@ -226,7 +231,6 @@ code,
 pre {
   font-family: Consolas;
   font-size: 0.85em;
-  background-color: rgb(41, 45, 62);
   -webkit-font-smoothing: initial;
   -moz-osx-font-smoothing: initial;
 }
