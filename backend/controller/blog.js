@@ -46,10 +46,11 @@ async function newBlog(blogObj, createtime) {
     otitle = blogObj.otitle,
     osketch = blogObj.osketch;
 
-  if (!title || !sketch || !content || !createtime || !otitle || !osketch) return false;
+  if (!title || !sketch || !content || !createtime || !otitle || !osketch)
+    return false;
 
-  let sql = `insert into blog (title, otitle, sketch, osketch, content, createtime) values('${title}', '${otitle}', '${sketch}', '${osketch}', '${content}', ${createtime})`;
-  console.log(sql)
+  let sql = `insert into blog (title, otitle, sketch, osketch, content, createtime) values('${title}', '${otitle}', '${sketch}', '${osketch}', '${content}', '${createtime}')`;
+  console.log(sql);
   let result = await exec(sql);
 
   return result.insertId;
