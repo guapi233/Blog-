@@ -3,9 +3,7 @@
     <div class="blog-wrap">
       <div class="blog-left">
         <div class="blog-list">
-          <BlogItem />
-          <BlogItem />
-          <BlogItem />
+          <BlogItem v-for="item in blogList" :key="item.id" :blogItem="item" />
         </div>
         <!-- <div class="blog-slider" style="width:26.04vw;height:3.2vh;background:red;margin-left:5vw;"></div> -->
         <Pagination style="margin-left:5vw;" :count="100" />
@@ -24,10 +22,24 @@ import BlogItem from "../components/BlogItem";
 import Pagination from "../components/Pagination";
 export default {
   components: { Nav, BlogItem, Pagination },
+  data() {
+    return {
+      blogList: []
+    }
+  },
   methods: {
     turnPage(pageNo) {
-      console.log(pageNo)
+      console.log(pageNo);
     }
+  },
+  async created() {
+    let blogList = await this.$axios.get("/blog/");
+    if (blogList.data.isError) {
+      alert(blogList.data.message);
+    } else {
+      this.blogList = blogList.data.data;
+    }
+    
   }
 };
 </script>
