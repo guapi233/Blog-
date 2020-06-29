@@ -8,7 +8,7 @@ code {
 }
 pre code {
   overflow-x: auto;
-  color:rgb(224, 228, 235);
+  color: rgb(224, 228, 235);
   background-color: rgb(41, 45, 62);
   white-space: pre;
   padding: 1.2em 1.4em;
@@ -159,7 +159,7 @@ pre .language-css::before {
   font-weight: normal;
 }
 #bsa-native .native-box {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.075);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.075);
   background-color: #f8f8f8;
   color: #304455;
   display: flex;
@@ -235,7 +235,7 @@ pre {
   -moz-osx-font-smoothing: initial;
 }
 code {
-  color: #3498db;
+  color: #d35400;
   padding: 3px 5px;
   margin: 0 2px;
   border-radius: 2px;
@@ -390,7 +390,7 @@ sup.beta.beta {
   img {
     page-break-inside: avoid;
   }
-  h2+p {
+  h2 + p {
     page-break-before: avoid;
   }
   a:link:after,
@@ -580,7 +580,7 @@ body.docs #nav {
   background-color: #fff;
   z-index: 20;
   display: none;
-  box-shadow: 0 0 2px rgba(0,0,0,0.25);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 #mobile-bar .menu-button {
   position: absolute;
@@ -892,7 +892,7 @@ ul.demo li {
 .content.guide[class*="migration"] .upgrade-path {
   margin-top: 2em;
   padding: 2em;
-  background: rgba(73,195,140,0.1);
+  background: rgba(73, 195, 140, 0.1);
   border-radius: 2px;
 }
 .content.guide[class*="migration"] .upgrade-path > h4 {
@@ -981,7 +981,7 @@ ul.demo li {
     height: 100%;
     top: 0;
     left: 0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
     -webkit-transform: translate(-280px, 0);
     transform: translate(-280px, 0);
@@ -1097,7 +1097,7 @@ ul.demo li {
   letter-spacing: 0.3px;
   padding: 2px 5px;
   margin-left: 10px;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   background: #f9f7f5;
   border-radius: 5px;
 }
@@ -1342,7 +1342,7 @@ ul.demo li {
   content: "...";
 }
 .style-guide details:not([open]) summary:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 .style-guide summary {
   cursor: pointer;
@@ -1409,7 +1409,7 @@ ul.demo li {
   height: auto;
   padding: 0.5em;
   background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .modal.open {
   display: block;
@@ -1432,7 +1432,7 @@ ul.demo li {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 30;
 }
 .stop-scroll {
@@ -1460,7 +1460,7 @@ ul.demo li {
 }
 .scrimba a:before,
 .vueschool a:before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 30px;
@@ -1472,7 +1472,7 @@ ul.demo li {
 }
 .scrimba a:after,
 .vueschool a:after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 0;
@@ -1497,7 +1497,7 @@ ul.demo li {
   padding-left: 36px;
 }
 .vue-mastery a:before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 30px;
@@ -1508,7 +1508,7 @@ ul.demo li {
   background-color: #73abfe;
 }
 .vue-mastery a:after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 0;
@@ -1531,13 +1531,15 @@ ul.demo li {
 .themes-grid .item-preview-img {
   transition: 0.15s box-shadow, 0.15s transform;
   border-radius: 0.5rem;
-  box-shadow: 0 2rem 1.5rem -1.5rem rgba(33,37,41,0.15), 0 0 1.5rem 0.5rem rgba(33,37,41,0.05);
+  box-shadow: 0 2rem 1.5rem -1.5rem rgba(33, 37, 41, 0.15),
+    0 0 1.5rem 0.5rem rgba(33, 37, 41, 0.05);
   overflow: hidden;
   display: block;
 }
 .themes-grid .item-preview-img:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 2.25rem 1.5rem -1.5rem rgba(33,37,41,0.2), 0 0 1.5rem 0.5rem rgba(33,37,41,0.05);
+  box-shadow: 0 2.25rem 1.5rem -1.5rem rgba(33, 37, 41, 0.2),
+    0 0 1.5rem 0.5rem rgba(33, 37, 41, 0.05);
 }
 .themes-grid img {
   max-width: 100%;
@@ -1638,7 +1640,7 @@ ul.demo li {
   }
 }
 #header {
-  box-shadow: 0 0 1px rgba(0,0,0,0.25);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s ease-in-out;
 }
 .content {

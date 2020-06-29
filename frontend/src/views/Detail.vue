@@ -33,6 +33,7 @@ export default {
 
       if (this.$route.params.blog) {
         this.blog = this.$route.params.blog;
+        localStorage.setItem("blog", JSON.stringify(this.$route.params.blog));
       } else {
         if (content) {
           this.blog = JSON.parse(content);
